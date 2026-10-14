@@ -1,0 +1,6 @@
+{
+  "name": "The Digital Lifestyle",
+  "description": "A premier digital magazine and educational blog exploring technology, artificial intelligence, digital marketing, social media, and digital business.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
