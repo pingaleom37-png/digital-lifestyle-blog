@@ -16,6 +16,7 @@ import {
   ChevronRight
 } from 'lucide-react';
 import { Article } from '../types';
+import { SafeImage } from './SafeImage';
 
 interface ArticleViewProps {
   article: Article;
@@ -228,9 +229,10 @@ export const ArticleView: React.FC<ArticleViewProps> = ({
           {/* Author Card */}
           <div className="flex items-center justify-between py-4 border-y border-slate-100">
             <div className="flex items-center gap-3 sm:gap-4">
-              <img
+              <SafeImage
                 src={article.author.avatar}
                 alt={article.author.name}
+                type="avatar"
                 className="w-12 h-12 rounded-full object-cover ring-2 ring-blue-100"
               />
               <div>
@@ -249,9 +251,12 @@ export const ArticleView: React.FC<ArticleViewProps> = ({
         {/* Hero Visual Image */}
         <figure className="mb-10">
           <div className="rounded-3xl overflow-hidden aspect-16/9 bg-slate-100 shadow-xl shadow-slate-200/50">
-            <img
+            <SafeImage
               src={article.heroImage}
               alt={article.heroImageAlt}
+              category={article.category}
+              type="hero"
+              priority={true}
               className="w-full h-full object-cover"
             />
           </div>
@@ -378,9 +383,10 @@ export const ArticleView: React.FC<ArticleViewProps> = ({
 
         {/* Author Bio Box */}
         <div className="mt-10 p-6 sm:p-8 rounded-3xl bg-slate-50 border border-slate-200 flex flex-col sm:flex-row items-center sm:items-start gap-5 text-center sm:text-left">
-          <img
+          <SafeImage
             src={article.author.avatar}
             alt={article.author.name}
+            type="avatar"
             className="w-16 h-16 rounded-full object-cover ring-4 ring-white shadow-md shrink-0"
           />
           <div>
@@ -442,9 +448,11 @@ export const ArticleView: React.FC<ArticleViewProps> = ({
                 className="group cursor-pointer bg-white rounded-2xl border border-slate-200 overflow-hidden hover:border-blue-400 hover:shadow-lg transition-all"
               >
                 <div className="aspect-16/10 overflow-hidden bg-slate-100">
-                  <img
+                  <SafeImage
                     src={rel.heroImage}
                     alt={rel.heroImageAlt}
+                    category={rel.category}
+                    type="thumbnail"
                     className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
                   />
                 </div>

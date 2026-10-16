@@ -1,6 +1,7 @@
 import React from 'react';
 import { X, Bookmark, Trash2, ArrowRight, BookOpen } from 'lucide-react';
 import { Article } from '../types';
+import { SafeImage } from './SafeImage';
 
 interface BookmarkDrawerProps {
   isOpen: boolean;
@@ -80,11 +81,15 @@ export const BookmarkDrawer: React.FC<BookmarkDrawerProps> = ({
                   }}
                   className="group p-3.5 rounded-xl border border-slate-200 hover:border-blue-400 hover:shadow-md transition-all cursor-pointer flex gap-3.5 items-start"
                 >
-                  <img
-                    src={article.heroImage}
-                    alt={article.heroImageAlt}
-                    className="w-18 h-18 rounded-lg object-cover shrink-0 bg-slate-100"
-                  />
+                  <div className="w-18 h-18 rounded-lg overflow-hidden shrink-0 bg-slate-100">
+                    <SafeImage
+                      src={article.heroImage}
+                      alt={article.heroImageAlt}
+                      category={article.category}
+                      type="thumbnail"
+                      className="w-full h-full object-cover"
+                    />
+                  </div>
                   <div className="flex-1 min-w-0">
                     <span className="text-[10px] font-bold text-blue-600 uppercase tracking-wider block">
                       {article.category}

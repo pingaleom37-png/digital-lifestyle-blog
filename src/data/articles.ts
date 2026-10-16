@@ -19,7 +19,7 @@ export const ARTICLES: Article[] = [
     featured: true,
     trending: true,
     views: 14250,
-    heroImage: 'https://images.unsplash.com/photo-1677442136019-21780efad99a?auto=format&fit=crop&w=1200&q=80',
+    heroImage: 'https://images.unsplash.com/photo-1620712943543-bcc4688e7485?auto=format&fit=crop&w=1200&q=80',
     heroImageAlt: 'Abstract glowing neural network and futuristic digital interface',
     excerpt: 'Artificial intelligence is no longer restricted to futuristic laboratories or sci-fi cinema. Today, it operates silently behind every smartphone swipe, GPS detour, personalized music queue, and smart home command.',
     sections: [
@@ -347,7 +347,7 @@ export const ARTICLES: Article[] = [
     featured: true,
     trending: true,
     views: 16750,
-    heroImage: 'https://images.unsplash.com/photo-1556742049-0a67c5574f73?auto=format&fit=crop&w=1200&q=80',
+    heroImage: 'https://images.unsplash.com/photo-1556740738-b6a63e27c4df?auto=format&fit=crop&w=1200&q=80',
     heroImageAlt: 'Modern retail logistics fulfillment center with digital barcode scanning and parcel distribution',
     excerpt: 'India is undergoing one of the fastest digital commerce transformations on the planet. Driven by seamless UPI payment rails, hyper-dense dark store networks, and open protocols like ONDC, the nation is redefining how a billion citizens buy and sell.',
     sections: [

@@ -1,6 +1,7 @@
 import React from 'react';
 import { ArrowRight, Clock, Eye, Sparkles, TrendingUp, Bookmark } from 'lucide-react';
 import { Article } from '../types';
+import { SafeImage } from './SafeImage';
 
 interface HeroFeaturedProps {
   featuredArticle: Article;
@@ -42,9 +43,12 @@ export const HeroFeatured: React.FC<HeroFeaturedProps> = ({
           className="lg:col-span-7 group bg-white rounded-3xl border border-slate-200/90 hover:border-blue-300 hover:shadow-2xl hover:shadow-blue-900/10 transition-all duration-300 overflow-hidden cursor-pointer flex flex-col justify-between"
         >
           <div className="relative aspect-16/10 overflow-hidden bg-slate-900">
-            <img
+            <SafeImage
               src={featuredArticle.heroImage}
               alt={featuredArticle.heroImageAlt}
+              category={featuredArticle.category}
+              type="hero"
+              priority={true}
               className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-out opacity-95 group-hover:opacity-100"
             />
             <div className="absolute inset-0 bg-gradient-to-t from-slate-950/70 via-slate-950/20 to-transparent" />
@@ -98,9 +102,10 @@ export const HeroFeatured: React.FC<HeroFeaturedProps> = ({
 
             <div className="pt-6 border-t border-slate-100 flex items-center justify-between">
               <div className="flex items-center gap-3">
-                <img
+                <SafeImage
                   src={featuredArticle.author.avatar}
                   alt={featuredArticle.author.name}
+                  type="avatar"
                   className="w-10 h-10 rounded-full object-cover ring-2 ring-blue-100"
                 />
                 <div>
@@ -158,11 +163,12 @@ export const HeroFeatured: React.FC<HeroFeaturedProps> = ({
                 </div>
 
                 <div className="w-20 h-20 rounded-xl overflow-hidden shrink-0 bg-slate-100 hidden sm:block">
-                  <img
+                  <SafeImage
                     src={article.heroImage}
                     alt={article.heroImageAlt}
+                    category={article.category}
+                    type="thumbnail"
                     className="w-full h-full object-cover group-hover/item:scale-105 transition-transform duration-300"
-                    loading="lazy"
                   />
                 </div>
               </div>

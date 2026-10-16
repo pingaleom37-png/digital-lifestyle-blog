@@ -1,6 +1,7 @@
 import React from 'react';
 import { Bookmark, Clock, Eye, ArrowRight, Share2, Check } from 'lucide-react';
 import { Article } from '../types';
+import { SafeImage } from './SafeImage';
 
 interface ArticleCardProps {
   article: Article;
@@ -52,11 +53,12 @@ export const ArticleCard: React.FC<ArticleCardProps> = ({
         className="group bg-white rounded-2xl border border-slate-200/90 hover:border-blue-300 hover:shadow-xl hover:shadow-blue-950/5 transition-all duration-300 overflow-hidden cursor-pointer flex flex-col md:flex-row"
       >
         <div className="md:w-5/12 relative overflow-hidden bg-slate-100 aspect-16/10 md:aspect-auto">
-          <img
+          <SafeImage
             src={article.heroImage}
             alt={article.heroImageAlt}
+            category={article.category}
+            type="card"
             className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 ease-out"
-            loading="lazy"
           />
           <div className="absolute top-3 left-3">
             <span className={`inline-block text-[11px] font-bold px-2.5 py-1 rounded-full border backdrop-blur-md bg-white/90 shadow-xs ${getCategoryColor(article.category)}`}>
@@ -87,9 +89,10 @@ export const ArticleCard: React.FC<ArticleCardProps> = ({
 
           <div className="flex items-center justify-between pt-4 border-t border-slate-100 mt-2">
             <div className="flex items-center gap-3">
-              <img
+              <SafeImage
                 src={article.author.avatar}
                 alt={article.author.name}
+                type="avatar"
                 className="w-8 h-8 rounded-full object-cover ring-2 ring-slate-100"
               />
               <div>
@@ -133,11 +136,12 @@ export const ArticleCard: React.FC<ArticleCardProps> = ({
     >
       {/* Thumbnail */}
       <div className="relative aspect-16/10 overflow-hidden bg-slate-100">
-        <img
+        <SafeImage
           src={article.heroImage}
           alt={article.heroImageAlt}
+          category={article.category}
+          type="card"
           className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 ease-out"
-          loading="lazy"
         />
         <div className="absolute top-3 left-3">
           <span className={`inline-block text-[11px] font-bold px-2.5 py-1 rounded-full border backdrop-blur-md bg-white/95 shadow-xs ${getCategoryColor(article.category)}`}>
@@ -186,9 +190,10 @@ export const ArticleCard: React.FC<ArticleCardProps> = ({
         {/* Footer info */}
         <div className="pt-4 border-t border-slate-100 flex items-center justify-between mt-auto">
           <div className="flex items-center gap-2.5">
-            <img
+            <SafeImage
               src={article.author.avatar}
               alt={article.author.name}
+              type="avatar"
               className="w-7 h-7 rounded-full object-cover ring-2 ring-slate-100"
             />
             <div className="overflow-hidden">

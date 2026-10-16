@@ -1,6 +1,7 @@
 import React from 'react';
 import { BookOpen, GraduationCap, Award, Compass, Users, CheckCircle2 } from 'lucide-react';
 import { EDITORIAL_TEAM } from '../data/articles';
+import { SafeImage } from './SafeImage';
 
 export const AboutSection: React.FC = () => {
   return (
@@ -140,9 +141,10 @@ export const AboutSection: React.FC = () => {
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
           {EDITORIAL_TEAM.map((member) => (
             <div key={member.name} className="p-6 rounded-2xl bg-white border border-slate-200 text-center hover:shadow-lg transition-all">
-              <img
+              <SafeImage
                 src={member.avatar}
                 alt={member.name}
+                type="avatar"
                 className="w-20 h-20 rounded-full object-cover mx-auto mb-4 ring-4 ring-blue-50"
               />
               <h3 className="font-serif-editorial text-lg font-bold text-slate-900">{member.name}</h3>
